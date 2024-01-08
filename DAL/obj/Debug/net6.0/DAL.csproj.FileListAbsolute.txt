@@ -1,0 +1,15 @@
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\DAL\bin\Debug\net6.0\DAL.deps.json
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\DAL\bin\Debug\net6.0\DAL.dll
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\DAL\bin\Debug\net6.0\DAL.pdb
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\DAL\bin\Debug\net6.0\DTO.dll
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\DAL\bin\Debug\net6.0\DTO.pdb
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\DAL\obj\Debug\net6.0\DAL.csproj.CopyComplete
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\DAL\obj\Debug\net6.0\DAL.dll
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\DAL\obj\Debug\net6.0\refint\DAL.dll
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\DAL\obj\Debug\net6.0\DAL.pdb
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\DAL\obj\Debug\net6.0\ref\DAL.dll

@@ -1,0 +1,17 @@
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\BLL\obj\Debug\net6.0\BLL.csproj.AssemblyReference.cache
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\BLL\obj\Debug\net6.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\BLL\obj\Debug\net6.0\BLL.AssemblyInfoInputs.cache
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\BLL\obj\Debug\net6.0\BLL.AssemblyInfo.cs
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\BLL\obj\Debug\net6.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\BLL\bin\Debug\net6.0\BLL.deps.json
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\BLL\bin\Debug\net6.0\BLL.dll
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\BLL\bin\Debug\net6.0\BLL.pdb
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\BLL\bin\Debug\net6.0\DAL.dll
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\BLL\bin\Debug\net6.0\DTO.dll
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\BLL\bin\Debug\net6.0\DAL.pdb
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\BLL\bin\Debug\net6.0\DTO.pdb
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\BLL\obj\Debug\net6.0\BLL.csproj.CopyComplete
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\BLL\obj\Debug\net6.0\BLL.dll
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\BLL\obj\Debug\net6.0\refint\BLL.dll
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\BLL\obj\Debug\net6.0\BLL.pdb
+C:\Users\nguye\source\repos\PR_QLSV\PR_QLSV\BLL\obj\Debug\net6.0\ref\BLL.dll
