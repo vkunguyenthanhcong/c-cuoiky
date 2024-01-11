@@ -86,8 +86,6 @@ namespace DAL
                                 }
                             }
 
-                            
-                            
                         }
                     }
                 }

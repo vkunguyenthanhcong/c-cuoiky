@@ -10,7 +10,10 @@
 
   <ItemGroup>
     <PackageReference Include="DevExpress.Win.Design" Version="23.2.3" />
+    <PackageReference Include="EPPlus" Version="4.0.5" />
+    <PackageReference Include="GemBox.Spreadsheet" Version="49.0.1562" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.2" />
+    <PackageReference Include="System.Data.OleDb" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>

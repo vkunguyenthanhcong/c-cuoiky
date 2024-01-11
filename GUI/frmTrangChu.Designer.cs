@@ -90,6 +90,7 @@
             gridControlHoSoTamTru = new DevExpress.XtraGrid.GridControl();
             gridViewHoSoTamTru = new DevExpress.XtraGrid.Views.Grid.GridView();
             groupBox4 = new GroupBox();
+            btnXemListSinhVien = new DevExpress.XtraEditors.SimpleButton();
             txtHoTenHoSoTamTru = new DevExpress.XtraEditors.TextEdit();
             label25 = new Label();
             btnThemMoiHoSoTamTru = new DevExpress.XtraEditors.SimpleButton();
@@ -113,7 +114,52 @@
             btnDanhSachHoSoTamTruTheoKhoa = new DevExpress.XtraEditors.SimpleButton();
             label20 = new Label();
             label19 = new Label();
-            btnXemListSinhVien = new DevExpress.XtraEditors.SimpleButton();
+            tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            xtraScrollableControl3 = new DevExpress.XtraEditors.XtraScrollableControl();
+            dtGridViewGiangVien = new DataGridView();
+            gridControlListGiangVien = new DevExpress.XtraGrid.GridControl();
+            gridViewListGiangVien = new DevExpress.XtraGrid.Views.Grid.GridView();
+            groupBox6 = new GroupBox();
+            btnImportExcelGV = new DevExpress.XtraEditors.SimpleButton();
+            btnDoiMKGV = new DevExpress.XtraEditors.SimpleButton();
+            btnTaoTKGV = new DevExpress.XtraEditors.SimpleButton();
+            txtTaiKhoanGV = new TextBox();
+            label37 = new Label();
+            cbGioiTinhGV = new DevExpress.XtraEditors.ComboBoxEdit();
+            cbKhoaGV = new ComboBox();
+            txtChuyenMonGV = new TextBox();
+            txtEmailGV = new TextBox();
+            txtSoDienThoaiGV = new TextBox();
+            dtNgaySinhGV = new DevExpress.XtraEditors.DateEdit();
+            txtCCCDGV = new TextBox();
+            txtHoTenGV = new TextBox();
+            txtMaGV = new TextBox();
+            label36 = new Label();
+            label34 = new Label();
+            label35 = new Label();
+            label32 = new Label();
+            label33 = new Label();
+            label30 = new Label();
+            label31 = new Label();
+            label29 = new Label();
+            label28 = new Label();
+            groupBox7 = new GroupBox();
+            btnSuaAvatarGV = new DevExpress.XtraEditors.SimpleButton();
+            imagePickGV = new PictureBox();
+            btnNhapLaiGV = new DevExpress.XtraEditors.SimpleButton();
+            btnXoaGV = new DevExpress.XtraEditors.SimpleButton();
+            btnSuaGV = new DevExpress.XtraEditors.SimpleButton();
+            btnThemGiangVien = new DevExpress.XtraEditors.SimpleButton();
+            groupBox5 = new GroupBox();
+            btnLocGiangVien = new DevExpress.XtraEditors.SimpleButton();
+            cbGvTheoKhoa = new ComboBox();
+            rdTatCaGVTheoKhoa = new RadioButton();
+            rdTatCaGV = new RadioButton();
+            tabNavigationPage4 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            groupBox9 = new GroupBox();
+            groupBox8 = new GroupBox();
+            tabNavigationPage5 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            xtraScrollableControl4 = new DevExpress.XtraEditors.XtraScrollableControl();
             ((System.ComponentModel.ISupportInitialize)barManager1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tabPane1).BeginInit();
             tabPane1.SuspendLayout();
@@ -153,6 +199,20 @@
             ((System.ComponentModel.ISupportInitialize)txtNoiTamTru.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtMaSVHoSoTamTru.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtMaIDHoSoTamTru.Properties).BeginInit();
+            tabNavigationPage3.SuspendLayout();
+            xtraScrollableControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dtGridViewGiangVien).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridControlListGiangVien).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridViewListGiangVien).BeginInit();
+            groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)cbGioiTinhGV.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtNgaySinhGV.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtNgaySinhGV.Properties.CalendarTimeProperties).BeginInit();
+            groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)imagePickGV).BeginInit();
+            groupBox5.SuspendLayout();
+            tabNavigationPage4.SuspendLayout();
+            tabNavigationPage5.SuspendLayout();
             SuspendLayout();
             // 
             // barManager1
@@ -200,10 +260,13 @@
             // 
             tabPane1.Controls.Add(tabNavigationPage1);
             tabPane1.Controls.Add(tabNavigationPage2);
+            tabPane1.Controls.Add(tabNavigationPage3);
+            tabPane1.Controls.Add(tabNavigationPage4);
+            tabPane1.Controls.Add(tabNavigationPage5);
             tabPane1.Dock = DockStyle.Fill;
             tabPane1.Location = new Point(0, 0);
             tabPane1.Name = "tabPane1";
-            tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] { tabNavigationPage1, tabNavigationPage2 });
+            tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] { tabNavigationPage1, tabNavigationPage2, tabNavigationPage3, tabNavigationPage5 });
             tabPane1.RegularSize = new Size(1384, 627);
             tabPane1.SelectedPage = tabNavigationPage1;
             tabPane1.Size = new Size(1384, 627);
@@ -762,8 +825,11 @@
             // 
             tabNavigationPage2.Caption = "Hồ Sơ Tạm Trú";
             tabNavigationPage2.Controls.Add(xtraScrollableControl2);
+            tabNavigationPage2.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("tabNavigationPage2.ImageOptions.SvgImage");
+            tabNavigationPage2.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             tabNavigationPage2.Name = "tabNavigationPage2";
-            tabNavigationPage2.Size = new Size(1384, 584);
+            tabNavigationPage2.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
+            tabNavigationPage2.Size = new Size(1384, 627);
             // 
             // xtraScrollableControl2
             // 
@@ -772,7 +838,7 @@
             xtraScrollableControl2.Dock = DockStyle.Fill;
             xtraScrollableControl2.Location = new Point(0, 0);
             xtraScrollableControl2.Name = "xtraScrollableControl2";
-            xtraScrollableControl2.Size = new Size(1384, 584);
+            xtraScrollableControl2.Size = new Size(1384, 627);
             xtraScrollableControl2.TabIndex = 0;
             // 
             // gridControlHoSoTamTru
@@ -782,7 +848,7 @@
             gridControlHoSoTamTru.MainView = gridViewHoSoTamTru;
             gridControlHoSoTamTru.MenuManager = barManager1;
             gridControlHoSoTamTru.Name = "gridControlHoSoTamTru";
-            gridControlHoSoTamTru.Size = new Size(1023, 584);
+            gridControlHoSoTamTru.Size = new Size(1023, 627);
             gridControlHoSoTamTru.TabIndex = 1;
             gridControlHoSoTamTru.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridViewHoSoTamTru });
             gridControlHoSoTamTru.Click += gridViewHoSoTamTru_Click;
@@ -821,10 +887,20 @@
             groupBox4.Dock = DockStyle.Left;
             groupBox4.Location = new Point(0, 0);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(361, 584);
+            groupBox4.Size = new Size(361, 627);
             groupBox4.TabIndex = 0;
             groupBox4.TabStop = false;
             groupBox4.Text = "Lọc theo lớp";
+            // 
+            // btnXemListSinhVien
+            // 
+            btnXemListSinhVien.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnXemListSinhVien.ImageOptions.SvgImage");
+            btnXemListSinhVien.Location = new Point(123, 536);
+            btnXemListSinhVien.Name = "btnXemListSinhVien";
+            btnXemListSinhVien.Size = new Size(192, 38);
+            btnXemListSinhVien.TabIndex = 40;
+            btnXemListSinhVien.Text = "Xem DS Sinh Viên";
+            btnXemListSinhVien.Click += btnXemListSinhVien_Click;
             // 
             // txtHoTenHoSoTamTru
             // 
@@ -1066,15 +1142,480 @@
             label19.TabIndex = 1;
             label19.Text = "Khoa :";
             // 
-            // btnXemListSinhVien
+            // tabNavigationPage3
             // 
-            btnXemListSinhVien.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("simpleButton1.ImageOptions.SvgImage");
-            btnXemListSinhVien.Location = new Point(123, 536);
-            btnXemListSinhVien.Name = "btnXemListSinhVien";
-            btnXemListSinhVien.Size = new Size(192, 38);
-            btnXemListSinhVien.TabIndex = 40;
-            btnXemListSinhVien.Text = "Xem DS Sinh Viên";
-            btnXemListSinhVien.Click += btnXemListSinhVien_Click;
+            tabNavigationPage3.Caption = "Quản Lý Giảng Viên";
+            tabNavigationPage3.Controls.Add(xtraScrollableControl3);
+            tabNavigationPage3.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("tabNavigationPage3.ImageOptions.SvgImage");
+            tabNavigationPage3.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
+            tabNavigationPage3.Name = "tabNavigationPage3";
+            tabNavigationPage3.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
+            tabNavigationPage3.Size = new Size(1384, 584);
+            // 
+            // xtraScrollableControl3
+            // 
+            xtraScrollableControl3.Controls.Add(dtGridViewGiangVien);
+            xtraScrollableControl3.Controls.Add(gridControlListGiangVien);
+            xtraScrollableControl3.Controls.Add(groupBox6);
+            xtraScrollableControl3.Dock = DockStyle.Fill;
+            xtraScrollableControl3.Location = new Point(0, 0);
+            xtraScrollableControl3.Name = "xtraScrollableControl3";
+            xtraScrollableControl3.Size = new Size(1384, 584);
+            xtraScrollableControl3.TabIndex = 0;
+            // 
+            // dtGridViewGiangVien
+            // 
+            dtGridViewGiangVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtGridViewGiangVien.Location = new Point(1050, 335);
+            dtGridViewGiangVien.Name = "dtGridViewGiangVien";
+            dtGridViewGiangVien.RowTemplate.Height = 25;
+            dtGridViewGiangVien.Size = new Size(123, 113);
+            dtGridViewGiangVien.TabIndex = 3;
+            // 
+            // gridControlListGiangVien
+            // 
+            gridControlListGiangVien.Dock = DockStyle.Fill;
+            gridControlListGiangVien.Location = new Point(638, 0);
+            gridControlListGiangVien.MainView = gridViewListGiangVien;
+            gridControlListGiangVien.MenuManager = barManager1;
+            gridControlListGiangVien.Name = "gridControlListGiangVien";
+            gridControlListGiangVien.Size = new Size(746, 584);
+            gridControlListGiangVien.TabIndex = 2;
+            gridControlListGiangVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridViewListGiangVien });
+            // 
+            // gridViewListGiangVien
+            // 
+            gridViewListGiangVien.GridControl = gridControlListGiangVien;
+            gridViewListGiangVien.Name = "gridViewListGiangVien";
+            gridViewListGiangVien.Click += gridViewListGiangVien_Click;
+            // 
+            // groupBox6
+            // 
+            groupBox6.Controls.Add(btnImportExcelGV);
+            groupBox6.Controls.Add(btnDoiMKGV);
+            groupBox6.Controls.Add(btnTaoTKGV);
+            groupBox6.Controls.Add(txtTaiKhoanGV);
+            groupBox6.Controls.Add(label37);
+            groupBox6.Controls.Add(cbGioiTinhGV);
+            groupBox6.Controls.Add(cbKhoaGV);
+            groupBox6.Controls.Add(txtChuyenMonGV);
+            groupBox6.Controls.Add(txtEmailGV);
+            groupBox6.Controls.Add(txtSoDienThoaiGV);
+            groupBox6.Controls.Add(dtNgaySinhGV);
+            groupBox6.Controls.Add(txtCCCDGV);
+            groupBox6.Controls.Add(txtHoTenGV);
+            groupBox6.Controls.Add(txtMaGV);
+            groupBox6.Controls.Add(label36);
+            groupBox6.Controls.Add(label34);
+            groupBox6.Controls.Add(label35);
+            groupBox6.Controls.Add(label32);
+            groupBox6.Controls.Add(label33);
+            groupBox6.Controls.Add(label30);
+            groupBox6.Controls.Add(label31);
+            groupBox6.Controls.Add(label29);
+            groupBox6.Controls.Add(label28);
+            groupBox6.Controls.Add(groupBox7);
+            groupBox6.Controls.Add(btnNhapLaiGV);
+            groupBox6.Controls.Add(btnXoaGV);
+            groupBox6.Controls.Add(btnSuaGV);
+            groupBox6.Controls.Add(btnThemGiangVien);
+            groupBox6.Controls.Add(groupBox5);
+            groupBox6.Dock = DockStyle.Left;
+            groupBox6.Location = new Point(0, 0);
+            groupBox6.Name = "groupBox6";
+            groupBox6.Size = new Size(638, 584);
+            groupBox6.TabIndex = 1;
+            groupBox6.TabStop = false;
+            groupBox6.Text = "groupBox6";
+            // 
+            // btnImportExcelGV
+            // 
+            btnImportExcelGV.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnImportExcelGV.ImageOptions.SvgImage");
+            btnImportExcelGV.Location = new Point(510, 76);
+            btnImportExcelGV.Name = "btnImportExcelGV";
+            btnImportExcelGV.Size = new Size(121, 38);
+            btnImportExcelGV.TabIndex = 30;
+            btnImportExcelGV.Text = "Nhập Excel";
+            btnImportExcelGV.Click += btnImportExcelGV_Click;
+            // 
+            // btnDoiMKGV
+            // 
+            btnDoiMKGV.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnDoiMKGV.ImageOptions.SvgImage");
+            btnDoiMKGV.Location = new Point(443, 481);
+            btnDoiMKGV.Name = "btnDoiMKGV";
+            btnDoiMKGV.Size = new Size(114, 35);
+            btnDoiMKGV.TabIndex = 29;
+            btnDoiMKGV.Text = "Đổi Mật Khẩu";
+            btnDoiMKGV.Click += btnDoiMKGV_Click;
+            // 
+            // btnTaoTKGV
+            // 
+            btnTaoTKGV.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnTaoTKGV.ImageOptions.SvgImage");
+            btnTaoTKGV.Location = new Point(323, 481);
+            btnTaoTKGV.Name = "btnTaoTKGV";
+            btnTaoTKGV.Size = new Size(114, 35);
+            btnTaoTKGV.TabIndex = 28;
+            btnTaoTKGV.Text = "Tạo Tài Khoản";
+            btnTaoTKGV.Click += btnTaoTKGV_Click;
+            // 
+            // txtTaiKhoanGV
+            // 
+            txtTaiKhoanGV.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTaiKhoanGV.Location = new Point(297, 449);
+            txtTaiKhoanGV.Name = "txtTaiKhoanGV";
+            txtTaiKhoanGV.Size = new Size(305, 26);
+            txtTaiKhoanGV.TabIndex = 27;
+            // 
+            // label37
+            // 
+            label37.AutoSize = true;
+            label37.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label37.Location = new Point(160, 454);
+            label37.Name = "label37";
+            label37.Size = new Size(131, 16);
+            label37.TabIndex = 26;
+            label37.Text = "Tài Khoản Đăng Nhập";
+            // 
+            // cbGioiTinhGV
+            // 
+            cbGioiTinhGV.Location = new Point(297, 221);
+            cbGioiTinhGV.MenuManager = barManager1;
+            cbGioiTinhGV.Name = "cbGioiTinhGV";
+            cbGioiTinhGV.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cbGioiTinhGV.Properties.Appearance.Options.UseFont = true;
+            cbGioiTinhGV.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            cbGioiTinhGV.Size = new Size(305, 24);
+            cbGioiTinhGV.TabIndex = 24;
+            // 
+            // cbKhoaGV
+            // 
+            cbKhoaGV.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cbKhoaGV.FormattingEnabled = true;
+            cbKhoaGV.Location = new Point(297, 406);
+            cbKhoaGV.Name = "cbKhoaGV";
+            cbKhoaGV.Size = new Size(305, 26);
+            cbKhoaGV.TabIndex = 23;
+            // 
+            // txtChuyenMonGV
+            // 
+            txtChuyenMonGV.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtChuyenMonGV.Location = new Point(297, 370);
+            txtChuyenMonGV.Name = "txtChuyenMonGV";
+            txtChuyenMonGV.Size = new Size(305, 26);
+            txtChuyenMonGV.TabIndex = 22;
+            // 
+            // txtEmailGV
+            // 
+            txtEmailGV.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEmailGV.Location = new Point(297, 335);
+            txtEmailGV.Name = "txtEmailGV";
+            txtEmailGV.Size = new Size(305, 26);
+            txtEmailGV.TabIndex = 21;
+            // 
+            // txtSoDienThoaiGV
+            // 
+            txtSoDienThoaiGV.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSoDienThoaiGV.Location = new Point(297, 295);
+            txtSoDienThoaiGV.Name = "txtSoDienThoaiGV";
+            txtSoDienThoaiGV.Size = new Size(305, 26);
+            txtSoDienThoaiGV.TabIndex = 20;
+            // 
+            // dtNgaySinhGV
+            // 
+            dtNgaySinhGV.EditValue = null;
+            dtNgaySinhGV.Location = new Point(505, 262);
+            dtNgaySinhGV.MenuManager = barManager1;
+            dtNgaySinhGV.Name = "dtNgaySinhGV";
+            dtNgaySinhGV.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dtNgaySinhGV.Properties.Appearance.Options.UseFont = true;
+            dtNgaySinhGV.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            dtNgaySinhGV.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            dtNgaySinhGV.Size = new Size(97, 24);
+            dtNgaySinhGV.TabIndex = 19;
+            // 
+            // txtCCCDGV
+            // 
+            txtCCCDGV.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCCCDGV.Location = new Point(297, 261);
+            txtCCCDGV.Name = "txtCCCDGV";
+            txtCCCDGV.Size = new Size(140, 26);
+            txtCCCDGV.TabIndex = 18;
+            // 
+            // txtHoTenGV
+            // 
+            txtHoTenGV.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtHoTenGV.Location = new Point(297, 182);
+            txtHoTenGV.Name = "txtHoTenGV";
+            txtHoTenGV.Size = new Size(305, 26);
+            txtHoTenGV.TabIndex = 17;
+            // 
+            // txtMaGV
+            // 
+            txtMaGV.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtMaGV.Location = new Point(297, 145);
+            txtMaGV.Name = "txtMaGV";
+            txtMaGV.Size = new Size(305, 26);
+            txtMaGV.TabIndex = 16;
+            // 
+            // label36
+            // 
+            label36.AutoSize = true;
+            label36.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label36.Location = new Point(443, 266);
+            label36.Name = "label36";
+            label36.Size = new Size(64, 16);
+            label36.TabIndex = 15;
+            label36.Text = "Ngày Sinh";
+            // 
+            // label34
+            // 
+            label34.AutoSize = true;
+            label34.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label34.Location = new Point(256, 411);
+            label34.Name = "label34";
+            label34.Size = new Size(35, 16);
+            label34.TabIndex = 14;
+            label34.Text = "Khoa";
+            // 
+            // label35
+            // 
+            label35.AutoSize = true;
+            label35.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label35.Location = new Point(214, 375);
+            label35.Name = "label35";
+            label35.Size = new Size(77, 16);
+            label35.TabIndex = 13;
+            label35.Text = "Chuyên Môn";
+            // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label32.Location = new Point(253, 339);
+            label32.Name = "label32";
+            label32.Size = new Size(38, 16);
+            label32.TabIndex = 12;
+            label32.Text = "Email";
+            // 
+            // label33
+            // 
+            label33.AutoSize = true;
+            label33.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label33.Location = new Point(248, 300);
+            label33.Name = "label33";
+            label33.Size = new Size(43, 16);
+            label33.TabIndex = 11;
+            label33.Text = "Số ĐT";
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label30.Location = new Point(252, 267);
+            label30.Name = "label30";
+            label30.Size = new Size(39, 16);
+            label30.TabIndex = 10;
+            label30.Text = "CCCD";
+            // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label31.Location = new Point(234, 226);
+            label31.Name = "label31";
+            label31.Size = new Size(57, 16);
+            label31.TabIndex = 9;
+            label31.Text = "Giới Tính";
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label29.Location = new Point(243, 187);
+            label29.Name = "label29";
+            label29.Size = new Size(48, 16);
+            label29.TabIndex = 8;
+            label29.Text = "Họ Tên";
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label28.Location = new Point(247, 150);
+            label28.Name = "label28";
+            label28.Size = new Size(44, 16);
+            label28.TabIndex = 7;
+            label28.Text = "Mã GV";
+            // 
+            // groupBox7
+            // 
+            groupBox7.Controls.Add(btnSuaAvatarGV);
+            groupBox7.Controls.Add(imagePickGV);
+            groupBox7.Location = new Point(12, 139);
+            groupBox7.Name = "groupBox7";
+            groupBox7.Size = new Size(200, 280);
+            groupBox7.TabIndex = 6;
+            groupBox7.TabStop = false;
+            // 
+            // btnSuaAvatarGV
+            // 
+            btnSuaAvatarGV.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnSuaAvatarGV.ImageOptions.SvgImage");
+            btnSuaAvatarGV.Location = new Point(46, 236);
+            btnSuaAvatarGV.Name = "btnSuaAvatarGV";
+            btnSuaAvatarGV.Size = new Size(105, 38);
+            btnSuaAvatarGV.TabIndex = 7;
+            btnSuaAvatarGV.Text = "Thay Đổi";
+            // 
+            // imagePickGV
+            // 
+            imagePickGV.Image = (Image)resources.GetObject("imagePickGV.Image");
+            imagePickGV.Location = new Point(7, 14);
+            imagePickGV.Name = "imagePickGV";
+            imagePickGV.Size = new Size(187, 216);
+            imagePickGV.SizeMode = PictureBoxSizeMode.StretchImage;
+            imagePickGV.TabIndex = 0;
+            imagePickGV.TabStop = false;
+            imagePickGV.Click += imagePickGV_Click;
+            // 
+            // btnNhapLaiGV
+            // 
+            btnNhapLaiGV.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnNhapLaiGV.ImageOptions.SvgImage");
+            btnNhapLaiGV.Location = new Point(383, 76);
+            btnNhapLaiGV.Name = "btnNhapLaiGV";
+            btnNhapLaiGV.Size = new Size(121, 38);
+            btnNhapLaiGV.TabIndex = 5;
+            btnNhapLaiGV.Text = "Nhập Lại";
+            btnNhapLaiGV.Click += btnNhapLaiGV_Click;
+            // 
+            // btnXoaGV
+            // 
+            btnXoaGV.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnXoaGV.ImageOptions.SvgImage");
+            btnXoaGV.Location = new Point(257, 76);
+            btnXoaGV.Name = "btnXoaGV";
+            btnXoaGV.Size = new Size(121, 38);
+            btnXoaGV.TabIndex = 4;
+            btnXoaGV.Text = "Xoá";
+            btnXoaGV.Click += btnXoaGV_Click;
+            // 
+            // btnSuaGV
+            // 
+            btnSuaGV.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnSuaGV.ImageOptions.SvgImage");
+            btnSuaGV.Location = new Point(130, 76);
+            btnSuaGV.Name = "btnSuaGV";
+            btnSuaGV.Size = new Size(119, 38);
+            btnSuaGV.TabIndex = 3;
+            btnSuaGV.Text = "Sửa";
+            btnSuaGV.Click += btnSuaGV_Click;
+            // 
+            // btnThemGiangVien
+            // 
+            btnThemGiangVien.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnThemGiangVien.ImageOptions.SvgImage");
+            btnThemGiangVien.Location = new Point(3, 76);
+            btnThemGiangVien.Name = "btnThemGiangVien";
+            btnThemGiangVien.Size = new Size(119, 38);
+            btnThemGiangVien.TabIndex = 2;
+            btnThemGiangVien.Text = "Thêm";
+            btnThemGiangVien.Click += btnThemGiangVien_Click;
+            // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(btnLocGiangVien);
+            groupBox5.Controls.Add(cbGvTheoKhoa);
+            groupBox5.Controls.Add(rdTatCaGVTheoKhoa);
+            groupBox5.Controls.Add(rdTatCaGV);
+            groupBox5.Location = new Point(0, 0);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(638, 60);
+            groupBox5.TabIndex = 1;
+            groupBox5.TabStop = false;
+            // 
+            // btnLocGiangVien
+            // 
+            btnLocGiangVien.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnLocGiangVien.ImageOptions.SvgImage");
+            btnLocGiangVien.Location = new Point(443, 14);
+            btnLocGiangVien.Name = "btnLocGiangVien";
+            btnLocGiangVien.Size = new Size(120, 40);
+            btnLocGiangVien.TabIndex = 3;
+            btnLocGiangVien.Text = "Cập Nhật";
+            btnLocGiangVien.Click += btnLocGiangVien_Click;
+            // 
+            // cbGvTheoKhoa
+            // 
+            cbGvTheoKhoa.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cbGvTheoKhoa.FormattingEnabled = true;
+            cbGvTheoKhoa.Location = new Point(151, 20);
+            cbGvTheoKhoa.Name = "cbGvTheoKhoa";
+            cbGvTheoKhoa.Size = new Size(272, 26);
+            cbGvTheoKhoa.TabIndex = 2;
+            // 
+            // rdTatCaGVTheoKhoa
+            // 
+            rdTatCaGVTheoKhoa.AutoSize = true;
+            rdTatCaGVTheoKhoa.Location = new Point(96, 25);
+            rdTatCaGVTheoKhoa.Name = "rdTatCaGVTheoKhoa";
+            rdTatCaGVTheoKhoa.Size = new Size(49, 17);
+            rdTatCaGVTheoKhoa.TabIndex = 1;
+            rdTatCaGVTheoKhoa.TabStop = true;
+            rdTatCaGVTheoKhoa.Text = "Khoa";
+            rdTatCaGVTheoKhoa.UseVisualStyleBackColor = true;
+            rdTatCaGVTheoKhoa.CheckedChanged += rdTatCaGVTheoKhoa_CheckedChanged;
+            // 
+            // rdTatCaGV
+            // 
+            rdTatCaGV.AutoSize = true;
+            rdTatCaGV.Location = new Point(33, 25);
+            rdTatCaGV.Name = "rdTatCaGV";
+            rdTatCaGV.Size = new Size(57, 17);
+            rdTatCaGV.TabIndex = 0;
+            rdTatCaGV.TabStop = true;
+            rdTatCaGV.Text = "Tất Cả";
+            rdTatCaGV.UseVisualStyleBackColor = true;
+            rdTatCaGV.CheckedChanged += rdTatCaGV_CheckedChanged;
+            // 
+            // tabNavigationPage4
+            // 
+            tabNavigationPage4.Caption = "Quản Lý Tài Khoản";
+            tabNavigationPage4.Controls.Add(groupBox9);
+            tabNavigationPage4.Controls.Add(groupBox8);
+            tabNavigationPage4.Name = "tabNavigationPage4";
+            tabNavigationPage4.Size = new Size(1384, 584);
+            // 
+            // groupBox9
+            // 
+            groupBox9.AutoSize = true;
+            groupBox9.Dock = DockStyle.Right;
+            groupBox9.Location = new Point(1378, 0);
+            groupBox9.Name = "groupBox9";
+            groupBox9.Size = new Size(6, 584);
+            groupBox9.TabIndex = 1;
+            groupBox9.TabStop = false;
+            groupBox9.Text = "groupBox9";
+            // 
+            // groupBox8
+            // 
+            groupBox8.AutoSize = true;
+            groupBox8.Dock = DockStyle.Left;
+            groupBox8.Location = new Point(0, 0);
+            groupBox8.Name = "groupBox8";
+            groupBox8.Size = new Size(6, 584);
+            groupBox8.TabIndex = 0;
+            groupBox8.TabStop = false;
+            groupBox8.Text = "groupBox8";
+            // 
+            // tabNavigationPage5
+            // 
+            tabNavigationPage5.Caption = "tabNavigationPage5";
+            tabNavigationPage5.Controls.Add(xtraScrollableControl4);
+            tabNavigationPage5.Name = "tabNavigationPage5";
+            tabNavigationPage5.Size = new Size(1384, 584);
+            // 
+            // xtraScrollableControl4
+            // 
+            xtraScrollableControl4.Dock = DockStyle.Fill;
+            xtraScrollableControl4.Location = new Point(0, 0);
+            xtraScrollableControl4.Name = "xtraScrollableControl4";
+            xtraScrollableControl4.Size = new Size(1384, 584);
+            xtraScrollableControl4.TabIndex = 0;
             // 
             // frmTrangChu
             // 
@@ -1131,6 +1672,23 @@
             ((System.ComponentModel.ISupportInitialize)txtNoiTamTru.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtMaSVHoSoTamTru.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtMaIDHoSoTamTru.Properties).EndInit();
+            tabNavigationPage3.ResumeLayout(false);
+            xtraScrollableControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dtGridViewGiangVien).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridControlListGiangVien).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridViewListGiangVien).EndInit();
+            groupBox6.ResumeLayout(false);
+            groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)cbGioiTinhGV.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtNgaySinhGV.Properties.CalendarTimeProperties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtNgaySinhGV.Properties).EndInit();
+            groupBox7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)imagePickGV).EndInit();
+            groupBox5.ResumeLayout(false);
+            groupBox5.PerformLayout();
+            tabNavigationPage4.ResumeLayout(false);
+            tabNavigationPage4.PerformLayout();
+            tabNavigationPage5.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1221,5 +1779,51 @@
         public DevExpress.XtraEditors.TextEdit txtHoTenHoSoTamTru;
         private Label label25;
         private DevExpress.XtraEditors.SimpleButton btnXemListSinhVien;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage3;
+        private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl3;
+        private GroupBox groupBox6;
+        private GroupBox groupBox5;
+        private DevExpress.XtraEditors.SimpleButton btnLocGiangVien;
+        private ComboBox cbGvTheoKhoa;
+        private RadioButton rdTatCaGVTheoKhoa;
+        private RadioButton rdTatCaGV;
+        private GroupBox groupBox7;
+        private PictureBox imagePickGV;
+        private DevExpress.XtraEditors.SimpleButton btnNhapLaiGV;
+        private DevExpress.XtraEditors.SimpleButton btnXoaGV;
+        private DevExpress.XtraEditors.SimpleButton btnSuaGV;
+        private DevExpress.XtraEditors.SimpleButton btnThemGiangVien;
+        private Label label36;
+        private Label label34;
+        private Label label35;
+        private Label label32;
+        private Label label33;
+        private Label label30;
+        private Label label31;
+        private Label label29;
+        private Label label28;
+        private DevExpress.XtraEditors.SimpleButton btnSuaAvatarGV;
+        private TextBox txtCCCDGV;
+        private TextBox txtHoTenGV;
+        private TextBox txtMaGV;
+        private DevExpress.XtraGrid.GridControl gridControlListGiangVien;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewListGiangVien;
+        private TextBox txtChuyenMonGV;
+        private TextBox txtEmailGV;
+        private TextBox txtSoDienThoaiGV;
+        private ComboBox cbKhoaGV;
+        private DevExpress.XtraEditors.DateEdit dtNgaySinhGV;
+        private DevExpress.XtraEditors.ComboBoxEdit cbGioiTinhGV;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage4;
+        private GroupBox groupBox9;
+        private GroupBox groupBox8;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage5;
+        private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl4;
+        private DevExpress.XtraEditors.SimpleButton btnTaoTKGV;
+        private TextBox txtTaiKhoanGV;
+        private Label label37;
+        private DevExpress.XtraEditors.SimpleButton btnDoiMKGV;
+        private DevExpress.XtraEditors.SimpleButton btnImportExcelGV;
+        private DataGridView dtGridViewGiangVien;
     }
 }
