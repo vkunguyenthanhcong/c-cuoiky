@@ -25,9 +25,24 @@ namespace DAL
                 {
                     if (reader.Read())
                     {
-                        byte[] byteArray = (byte[])reader[2];
-                        return new ThongTinSinhVien(reader[0].ToString(), int.Parse(reader[1].ToString()), byteArray, reader[3].ToString(), DateTime.Parse(reader[4].ToString()), reader[5].ToString(), reader[6].ToString(), reader[7].ToString(), reader[8].ToString(), reader[9].ToString(), reader[10].ToString(), int.Parse(reader[11].ToString()), int.Parse(reader[12].ToString()), reader[13].ToString(), reader[14].ToString(), reader[15].ToString(), reader[16].ToString(), reader[17].ToString(), reader[18].ToString());
                         
+                        string q = $"SELECT username FROM [user] WHERE manguoidung = '{reader[0].ToString()}'";
+                        SqlCommand command = new SqlCommand(q, conn);
+                        using (SqlDataReader r = command.ExecuteReader())
+                        {
+                            if (r.Read())
+                            {
+                                byte[] byteArray = (byte[])reader[2];
+                                return new ThongTinSinhVien(reader[0].ToString(), int.Parse(reader[1].ToString()), byteArray, reader[3].ToString(), DateTime.Parse(reader[4].ToString()), reader[5].ToString(), reader[6].ToString(), reader[7].ToString(), reader[8].ToString(), reader[9].ToString(), reader[10].ToString(), int.Parse(reader[11].ToString()), int.Parse(reader[12].ToString()), reader[13].ToString(), reader[14].ToString(), reader[15].ToString(), reader[16].ToString(), reader[17].ToString(), reader[18].ToString(), r[0].ToString());
+
+                            }
+                            else
+                            {
+                                byte[] byteArray = (byte[])reader[2];
+                                return new ThongTinSinhVien(reader[0].ToString(), int.Parse(reader[1].ToString()), byteArray, reader[3].ToString(), DateTime.Parse(reader[4].ToString()), reader[5].ToString(), reader[6].ToString(), reader[7].ToString(), reader[8].ToString(), reader[9].ToString(), reader[10].ToString(), int.Parse(reader[11].ToString()), int.Parse(reader[12].ToString()), reader[13].ToString(), reader[14].ToString(), reader[15].ToString(), reader[16].ToString(), reader[17].ToString(), reader[18].ToString(), "");
+
+                            }
+                        }
                     }
                     else
                     {
@@ -49,9 +64,25 @@ namespace DAL
                 {
                     while (reader.Read())
                     {
-                        byte[] byteArray = (byte[])reader[2];
-                        ThongTinSinhVien sinhVien = new ThongTinSinhVien(reader[0].ToString(), int.Parse(reader[1].ToString()), byteArray, reader[3].ToString(), DateTime.Parse(reader[4].ToString()), reader[5].ToString(), reader[6].ToString(), reader[7].ToString(), reader[8].ToString(), reader[9].ToString(), reader[10].ToString(), int.Parse(reader[11].ToString()), int.Parse(reader[12].ToString()), reader[13].ToString(), reader[14].ToString(), reader[15].ToString(), reader[16].ToString(), reader[17].ToString(), reader[18].ToString()); ;
-                        sinhVienList.Add(sinhVien);
+                        string q = $"SELECT username FROM [user] WHERE manguoidung = '{reader[0].ToString()}'";
+                        SqlCommand cmd = new SqlCommand(q, conn);
+                        using (SqlDataReader r = cmd.ExecuteReader())
+                        {
+                            if (r.Read())
+                            {
+                                byte[] byteArray = (byte[])reader[2];
+                                ThongTinSinhVien sinhVien = new ThongTinSinhVien(reader[0].ToString(), int.Parse(reader[1].ToString()), byteArray, reader[3].ToString(), DateTime.Parse(reader[4].ToString()), reader[5].ToString(), reader[6].ToString(), reader[7].ToString(), reader[8].ToString(), reader[9].ToString(), reader[10].ToString(), int.Parse(reader[11].ToString()), int.Parse(reader[12].ToString()), reader[13].ToString(), reader[14].ToString(), reader[15].ToString(), reader[16].ToString(), reader[17].ToString(), reader[18].ToString(), r[0].ToString()); ;
+                                sinhVienList.Add(sinhVien);
+                            }
+                            else
+                            {
+                                byte[] byteArray = (byte[])reader[2];
+                                ThongTinSinhVien sinhVien = new ThongTinSinhVien(reader[0].ToString(), int.Parse(reader[1].ToString()), byteArray, reader[3].ToString(), DateTime.Parse(reader[4].ToString()), reader[5].ToString(), reader[6].ToString(), reader[7].ToString(), reader[8].ToString(), reader[9].ToString(), reader[10].ToString(), int.Parse(reader[11].ToString()), int.Parse(reader[12].ToString()), reader[13].ToString(), reader[14].ToString(), reader[15].ToString(), reader[16].ToString(), reader[17].ToString(), reader[18].ToString(),""); ;
+                                sinhVienList.Add(sinhVien);
+                            }
+                        }
+
+
                     }
                 }
             }

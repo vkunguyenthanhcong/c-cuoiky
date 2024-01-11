@@ -27,9 +27,10 @@ namespace DTO
         string nghebo;
         string ngheme;
         string diachi;
-
+        string taikhoan;
         string tamtru;
 
+        public string Taikhoan { get => taikhoan; set => taikhoan = value; }
         public string Tamtru { get => tamtru; set => tamtru = value; }
         public string Masv { get => masv; set => masv = value; }
         public int Namnhaphoc { get => namnhaphoc; set => namnhaphoc = value; }
@@ -77,6 +78,29 @@ namespace DTO
             this.Nghebo = nghebo;
             this.Ngheme = ngheme;
             this.Diachi = diachi;
+        }
+        public ThongTinSinhVien(string masv, int namnhaphoc, byte[] image, string hoten, DateTime ngaysinh, string gioitinh, string hedaotao, string dantoc, string khoa, string lop, string tinhtrang, int cccd, int sodienthoai, string email, string hotenbo, string hotenme, string nghebo, string ngheme, string diachi, string taikhoan)
+        {
+            this.Masv = masv;
+            this.Namnhaphoc = namnhaphoc;
+            this.Image = image;
+            this.Hoten = hoten;
+            this.Ngaysinh = ngaysinh;
+            this.Gioitinh = gioitinh;
+            this.Hedaotao = hedaotao;
+            this.Dantoc = dantoc;
+            this.Khoa = khoa;
+            this.Lop = lop;
+            this.Tinhtrang = tinhtrang;
+            this.Cccd = cccd;
+            this.Sodienthoai = sodienthoai;
+            this.Email = email;
+            this.Hotenbo = hotenbo;
+            this.Hotenme = hotenme;
+            this.Nghebo = nghebo;
+            this.Ngheme = ngheme;
+            this.Diachi = diachi;
+            this.Taikhoan = taikhoan;
         }
         public ThongTinSinhVien(string masv, string hoten)
         {

@@ -39,13 +39,19 @@
             tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             groupBox3 = new GroupBox();
+            dtGridViewSV = new DataGridView();
             gridControlAllHoSoSinhVien = new DevExpress.XtraGrid.GridControl();
             gridViewAllHoSoSinhVien = new DevExpress.XtraGrid.Views.Grid.GridView();
             groupBox1 = new GroupBox();
+            simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            btnDoiMKSV = new DevExpress.XtraEditors.SimpleButton();
             btnReset = new DevExpress.XtraEditors.SimpleButton();
             btnXoa = new DevExpress.XtraEditors.SimpleButton();
+            btnThemTKSV = new DevExpress.XtraEditors.SimpleButton();
             btnCapNhat = new DevExpress.XtraEditors.SimpleButton();
+            txtTKSV = new DevExpress.XtraEditors.TextEdit();
             btnThemSinhVien = new DevExpress.XtraEditors.SimpleButton();
+            label38 = new Label();
             txtDiaChi = new DevExpress.XtraEditors.TextEdit();
             txtNgheMe = new DevExpress.XtraEditors.TextEdit();
             txtHoTenMe = new DevExpress.XtraEditors.TextEdit();
@@ -158,17 +164,17 @@
             tabNavigationPage4 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             groupBox9 = new GroupBox();
             groupBox8 = new GroupBox();
-            tabNavigationPage5 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            xtraScrollableControl4 = new DevExpress.XtraEditors.XtraScrollableControl();
             ((System.ComponentModel.ISupportInitialize)barManager1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tabPane1).BeginInit();
             tabPane1.SuspendLayout();
             tabNavigationPage1.SuspendLayout();
             xtraScrollableControl1.SuspendLayout();
             groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dtGridViewSV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridControlAllHoSoSinhVien).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridViewAllHoSoSinhVien).BeginInit();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)txtTKSV.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtDiaChi.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtNgheMe.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtHoTenMe.Properties).BeginInit();
@@ -212,7 +218,6 @@
             ((System.ComponentModel.ISupportInitialize)imagePickGV).BeginInit();
             groupBox5.SuspendLayout();
             tabNavigationPage4.SuspendLayout();
-            tabNavigationPage5.SuspendLayout();
             SuspendLayout();
             // 
             // barManager1
@@ -230,15 +235,15 @@
             barDockControlTop.Dock = DockStyle.Top;
             barDockControlTop.Location = new Point(0, 0);
             barDockControlTop.Manager = barManager1;
-            barDockControlTop.Size = new Size(1384, 0);
+            barDockControlTop.Size = new Size(1789, 0);
             // 
             // barDockControlBottom
             // 
             barDockControlBottom.CausesValidation = false;
             barDockControlBottom.Dock = DockStyle.Bottom;
-            barDockControlBottom.Location = new Point(0, 627);
+            barDockControlBottom.Location = new Point(0, 777);
             barDockControlBottom.Manager = barManager1;
-            barDockControlBottom.Size = new Size(1384, 0);
+            barDockControlBottom.Size = new Size(1789, 0);
             // 
             // barDockControlLeft
             // 
@@ -246,15 +251,15 @@
             barDockControlLeft.Dock = DockStyle.Left;
             barDockControlLeft.Location = new Point(0, 0);
             barDockControlLeft.Manager = barManager1;
-            barDockControlLeft.Size = new Size(0, 627);
+            barDockControlLeft.Size = new Size(0, 777);
             // 
             // barDockControlRight
             // 
             barDockControlRight.CausesValidation = false;
             barDockControlRight.Dock = DockStyle.Right;
-            barDockControlRight.Location = new Point(1384, 0);
+            barDockControlRight.Location = new Point(1789, 0);
             barDockControlRight.Manager = barManager1;
-            barDockControlRight.Size = new Size(0, 627);
+            barDockControlRight.Size = new Size(0, 777);
             // 
             // tabPane1
             // 
@@ -262,14 +267,13 @@
             tabPane1.Controls.Add(tabNavigationPage2);
             tabPane1.Controls.Add(tabNavigationPage3);
             tabPane1.Controls.Add(tabNavigationPage4);
-            tabPane1.Controls.Add(tabNavigationPage5);
             tabPane1.Dock = DockStyle.Fill;
             tabPane1.Location = new Point(0, 0);
             tabPane1.Name = "tabPane1";
-            tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] { tabNavigationPage1, tabNavigationPage2, tabNavigationPage3, tabNavigationPage5 });
-            tabPane1.RegularSize = new Size(1384, 627);
+            tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] { tabNavigationPage1, tabNavigationPage2, tabNavigationPage3 });
+            tabPane1.RegularSize = new Size(1789, 777);
             tabPane1.SelectedPage = tabNavigationPage1;
-            tabPane1.Size = new Size(1384, 627);
+            tabPane1.Size = new Size(1789, 777);
             tabPane1.TabIndex = 4;
             tabPane1.Text = "tabPane1";
             // 
@@ -283,7 +287,7 @@
             tabNavigationPage1.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             tabNavigationPage1.Name = "tabNavigationPage1";
             tabNavigationPage1.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            tabNavigationPage1.Size = new Size(1384, 584);
+            tabNavigationPage1.Size = new Size(1789, 734);
             // 
             // xtraScrollableControl1
             // 
@@ -292,19 +296,31 @@
             xtraScrollableControl1.Dock = DockStyle.Fill;
             xtraScrollableControl1.Location = new Point(0, 0);
             xtraScrollableControl1.Name = "xtraScrollableControl1";
-            xtraScrollableControl1.Size = new Size(1384, 584);
+            xtraScrollableControl1.Size = new Size(1789, 734);
             xtraScrollableControl1.TabIndex = 0;
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(dtGridViewSV);
             groupBox3.Controls.Add(gridControlAllHoSoSinhVien);
             groupBox3.Dock = DockStyle.Fill;
             groupBox3.Location = new Point(0, 329);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(1384, 255);
+            groupBox3.Size = new Size(1789, 405);
             groupBox3.TabIndex = 1;
             groupBox3.TabStop = false;
             groupBox3.Text = "Danh Sách Sinh Viên";
+            // 
+            // dtGridViewSV
+            // 
+            dtGridViewSV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtGridViewSV.Dock = DockStyle.Bottom;
+            dtGridViewSV.Location = new Point(3, 252);
+            dtGridViewSV.Name = "dtGridViewSV";
+            dtGridViewSV.RowTemplate.Height = 25;
+            dtGridViewSV.Size = new Size(1783, 150);
+            dtGridViewSV.TabIndex = 1;
+            dtGridViewSV.Visible = false;
             // 
             // gridControlAllHoSoSinhVien
             // 
@@ -313,7 +329,7 @@
             gridControlAllHoSoSinhVien.MainView = gridViewAllHoSoSinhVien;
             gridControlAllHoSoSinhVien.MenuManager = barManager1;
             gridControlAllHoSoSinhVien.Name = "gridControlAllHoSoSinhVien";
-            gridControlAllHoSoSinhVien.Size = new Size(1378, 235);
+            gridControlAllHoSoSinhVien.Size = new Size(1783, 385);
             gridControlAllHoSoSinhVien.TabIndex = 0;
             gridControlAllHoSoSinhVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridViewAllHoSoSinhVien });
             // 
@@ -325,10 +341,15 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(simpleButton1);
+            groupBox1.Controls.Add(btnDoiMKSV);
             groupBox1.Controls.Add(btnReset);
             groupBox1.Controls.Add(btnXoa);
+            groupBox1.Controls.Add(btnThemTKSV);
             groupBox1.Controls.Add(btnCapNhat);
+            groupBox1.Controls.Add(txtTKSV);
             groupBox1.Controls.Add(btnThemSinhVien);
+            groupBox1.Controls.Add(label38);
             groupBox1.Controls.Add(txtDiaChi);
             groupBox1.Controls.Add(txtNgheMe);
             groupBox1.Controls.Add(txtHoTenMe);
@@ -369,17 +390,41 @@
             groupBox1.Dock = DockStyle.Top;
             groupBox1.Location = new Point(0, 0);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1384, 329);
+            groupBox1.Size = new Size(1789, 329);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Hồ Sơ Sinh Viên";
+            // 
+            // simpleButton1
+            // 
+            simpleButton1.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            simpleButton1.Appearance.Options.UseFont = true;
+            simpleButton1.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("simpleButton1.ImageOptions.SvgImage");
+            simpleButton1.Location = new Point(1158, 268);
+            simpleButton1.Name = "simpleButton1";
+            simpleButton1.Size = new Size(163, 42);
+            simpleButton1.TabIndex = 44;
+            simpleButton1.Text = "Nhập Excel";
+            simpleButton1.Click += simpleButton1_Click;
+            // 
+            // btnDoiMKSV
+            // 
+            btnDoiMKSV.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDoiMKSV.Appearance.Options.UseFont = true;
+            btnDoiMKSV.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnDoiMKSV.ImageOptions.SvgImage");
+            btnDoiMKSV.Location = new Point(1517, 139);
+            btnDoiMKSV.Name = "btnDoiMKSV";
+            btnDoiMKSV.Size = new Size(164, 42);
+            btnDoiMKSV.TabIndex = 43;
+            btnDoiMKSV.Text = "Đổi Mật Khẩu";
+            btnDoiMKSV.Click += btnDoiMKSV_Click;
             // 
             // btnReset
             // 
             btnReset.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnReset.Appearance.Options.UseFont = true;
             btnReset.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnReset.ImageOptions.SvgImage");
-            btnReset.Location = new Point(1158, 230);
+            btnReset.Location = new Point(1158, 204);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(163, 42);
             btnReset.TabIndex = 39;
@@ -391,36 +436,68 @@
             btnXoa.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnXoa.Appearance.Options.UseFont = true;
             btnXoa.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnXoa.ImageOptions.SvgImage");
-            btnXoa.Location = new Point(1158, 168);
+            btnXoa.Location = new Point(1158, 142);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(163, 42);
             btnXoa.TabIndex = 38;
             btnXoa.Text = "Xoá";
             btnXoa.Click += btnXoa_Click;
             // 
+            // btnThemTKSV
+            // 
+            btnThemTKSV.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnThemTKSV.Appearance.Options.UseFont = true;
+            btnThemTKSV.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnThemTKSV.ImageOptions.SvgImage");
+            btnThemTKSV.Location = new Point(1348, 139);
+            btnThemTKSV.Name = "btnThemTKSV";
+            btnThemTKSV.Size = new Size(163, 42);
+            btnThemTKSV.TabIndex = 42;
+            btnThemTKSV.Text = "Thêm tài khoản";
+            btnThemTKSV.Click += btnThemTKSV_Click;
+            // 
             // btnCapNhat
             // 
             btnCapNhat.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnCapNhat.Appearance.Options.UseFont = true;
             btnCapNhat.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnCapNhat.ImageOptions.SvgImage");
-            btnCapNhat.Location = new Point(1158, 106);
+            btnCapNhat.Location = new Point(1158, 80);
             btnCapNhat.Name = "btnCapNhat";
             btnCapNhat.Size = new Size(163, 42);
             btnCapNhat.TabIndex = 37;
             btnCapNhat.Text = "Cập Nhật";
             btnCapNhat.Click += btnCapNhat_Click;
             // 
+            // txtTKSV
+            // 
+            txtTKSV.Location = new Point(1348, 62);
+            txtTKSV.MenuManager = barManager1;
+            txtTKSV.Name = "txtTKSV";
+            txtTKSV.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTKSV.Properties.Appearance.Options.UseFont = true;
+            txtTKSV.Size = new Size(333, 24);
+            txtTKSV.TabIndex = 41;
+            // 
             // btnThemSinhVien
             // 
             btnThemSinhVien.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnThemSinhVien.Appearance.Options.UseFont = true;
             btnThemSinhVien.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnThemSinhVien.ImageOptions.SvgImage");
-            btnThemSinhVien.Location = new Point(1158, 44);
+            btnThemSinhVien.Location = new Point(1158, 18);
             btnThemSinhVien.Name = "btnThemSinhVien";
             btnThemSinhVien.Size = new Size(163, 42);
             btnThemSinhVien.TabIndex = 36;
             btnThemSinhVien.Text = "Thêm";
             btnThemSinhVien.Click += btnThemSinhVien_Click;
+            // 
+            // label38
+            // 
+            label38.AutoSize = true;
+            label38.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label38.Location = new Point(1450, 25);
+            label38.Name = "label38";
+            label38.Size = new Size(131, 16);
+            label38.TabIndex = 40;
+            label38.Text = "Tài Khoản Đăng Nhập";
             // 
             // txtDiaChi
             // 
@@ -829,7 +906,7 @@
             tabNavigationPage2.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             tabNavigationPage2.Name = "tabNavigationPage2";
             tabNavigationPage2.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            tabNavigationPage2.Size = new Size(1384, 627);
+            tabNavigationPage2.Size = new Size(1384, 734);
             // 
             // xtraScrollableControl2
             // 
@@ -838,7 +915,7 @@
             xtraScrollableControl2.Dock = DockStyle.Fill;
             xtraScrollableControl2.Location = new Point(0, 0);
             xtraScrollableControl2.Name = "xtraScrollableControl2";
-            xtraScrollableControl2.Size = new Size(1384, 627);
+            xtraScrollableControl2.Size = new Size(1384, 734);
             xtraScrollableControl2.TabIndex = 0;
             // 
             // gridControlHoSoTamTru
@@ -848,7 +925,7 @@
             gridControlHoSoTamTru.MainView = gridViewHoSoTamTru;
             gridControlHoSoTamTru.MenuManager = barManager1;
             gridControlHoSoTamTru.Name = "gridControlHoSoTamTru";
-            gridControlHoSoTamTru.Size = new Size(1023, 627);
+            gridControlHoSoTamTru.Size = new Size(1023, 734);
             gridControlHoSoTamTru.TabIndex = 1;
             gridControlHoSoTamTru.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridViewHoSoTamTru });
             gridControlHoSoTamTru.Click += gridViewHoSoTamTru_Click;
@@ -887,7 +964,7 @@
             groupBox4.Dock = DockStyle.Left;
             groupBox4.Location = new Point(0, 0);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(361, 627);
+            groupBox4.Size = new Size(361, 734);
             groupBox4.TabIndex = 0;
             groupBox4.TabStop = false;
             groupBox4.Text = "Lọc theo lớp";
@@ -895,7 +972,7 @@
             // btnXemListSinhVien
             // 
             btnXemListSinhVien.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnXemListSinhVien.ImageOptions.SvgImage");
-            btnXemListSinhVien.Location = new Point(123, 536);
+            btnXemListSinhVien.Location = new Point(130, 550);
             btnXemListSinhVien.Name = "btnXemListSinhVien";
             btnXemListSinhVien.Size = new Size(192, 38);
             btnXemListSinhVien.TabIndex = 40;
@@ -927,7 +1004,7 @@
             // btnThemMoiHoSoTamTru
             // 
             btnThemMoiHoSoTamTru.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnThemMoiHoSoTamTru.ImageOptions.SvgImage");
-            btnThemMoiHoSoTamTru.Location = new Point(22, 492);
+            btnThemMoiHoSoTamTru.Location = new Point(29, 506);
             btnThemMoiHoSoTamTru.Name = "btnThemMoiHoSoTamTru";
             btnThemMoiHoSoTamTru.Size = new Size(93, 38);
             btnThemMoiHoSoTamTru.TabIndex = 37;
@@ -960,7 +1037,7 @@
             // btnSuaTamTru
             // 
             btnSuaTamTru.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnSuaTamTru.ImageOptions.SvgImage");
-            btnSuaTamTru.Location = new Point(123, 492);
+            btnSuaTamTru.Location = new Point(130, 506);
             btnSuaTamTru.Name = "btnSuaTamTru";
             btnSuaTamTru.Size = new Size(93, 38);
             btnSuaTamTru.TabIndex = 34;
@@ -970,7 +1047,7 @@
             // btnNhapLaiTamTru
             // 
             btnNhapLaiTamTru.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnNhapLaiTamTru.ImageOptions.SvgImage");
-            btnNhapLaiTamTru.Location = new Point(22, 536);
+            btnNhapLaiTamTru.Location = new Point(29, 550);
             btnNhapLaiTamTru.Name = "btnNhapLaiTamTru";
             btnNhapLaiTamTru.Size = new Size(93, 38);
             btnNhapLaiTamTru.TabIndex = 33;
@@ -980,7 +1057,7 @@
             // btnXoaTamTru
             // 
             btnXoaTamTru.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnXoaTamTru.ImageOptions.SvgImage");
-            btnXoaTamTru.Location = new Point(222, 492);
+            btnXoaTamTru.Location = new Point(229, 506);
             btnXoaTamTru.Name = "btnXoaTamTru";
             btnXoaTamTru.Size = new Size(93, 38);
             btnXoaTamTru.TabIndex = 32;
@@ -1150,7 +1227,7 @@
             tabNavigationPage3.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             tabNavigationPage3.Name = "tabNavigationPage3";
             tabNavigationPage3.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            tabNavigationPage3.Size = new Size(1384, 584);
+            tabNavigationPage3.Size = new Size(1789, 734);
             // 
             // xtraScrollableControl3
             // 
@@ -1160,7 +1237,7 @@
             xtraScrollableControl3.Dock = DockStyle.Fill;
             xtraScrollableControl3.Location = new Point(0, 0);
             xtraScrollableControl3.Name = "xtraScrollableControl3";
-            xtraScrollableControl3.Size = new Size(1384, 584);
+            xtraScrollableControl3.Size = new Size(1789, 734);
             xtraScrollableControl3.TabIndex = 0;
             // 
             // dtGridViewGiangVien
@@ -1171,6 +1248,7 @@
             dtGridViewGiangVien.RowTemplate.Height = 25;
             dtGridViewGiangVien.Size = new Size(123, 113);
             dtGridViewGiangVien.TabIndex = 3;
+            dtGridViewGiangVien.Visible = false;
             // 
             // gridControlListGiangVien
             // 
@@ -1179,7 +1257,7 @@
             gridControlListGiangVien.MainView = gridViewListGiangVien;
             gridControlListGiangVien.MenuManager = barManager1;
             gridControlListGiangVien.Name = "gridControlListGiangVien";
-            gridControlListGiangVien.Size = new Size(746, 584);
+            gridControlListGiangVien.Size = new Size(1151, 734);
             gridControlListGiangVien.TabIndex = 2;
             gridControlListGiangVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridViewListGiangVien });
             // 
@@ -1223,7 +1301,7 @@
             groupBox6.Dock = DockStyle.Left;
             groupBox6.Location = new Point(0, 0);
             groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(638, 584);
+            groupBox6.Size = new Size(638, 734);
             groupBox6.TabIndex = 1;
             groupBox6.TabStop = false;
             groupBox6.Text = "groupBox6";
@@ -1602,26 +1680,11 @@
             groupBox8.TabStop = false;
             groupBox8.Text = "groupBox8";
             // 
-            // tabNavigationPage5
-            // 
-            tabNavigationPage5.Caption = "tabNavigationPage5";
-            tabNavigationPage5.Controls.Add(xtraScrollableControl4);
-            tabNavigationPage5.Name = "tabNavigationPage5";
-            tabNavigationPage5.Size = new Size(1384, 584);
-            // 
-            // xtraScrollableControl4
-            // 
-            xtraScrollableControl4.Dock = DockStyle.Fill;
-            xtraScrollableControl4.Location = new Point(0, 0);
-            xtraScrollableControl4.Name = "xtraScrollableControl4";
-            xtraScrollableControl4.Size = new Size(1384, 584);
-            xtraScrollableControl4.TabIndex = 0;
-            // 
             // frmTrangChu
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1384, 627);
+            ClientSize = new Size(1789, 777);
             Controls.Add(tabPane1);
             Controls.Add(barDockControlLeft);
             Controls.Add(barDockControlRight);
@@ -1637,10 +1700,12 @@
             tabNavigationPage1.ResumeLayout(false);
             xtraScrollableControl1.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dtGridViewSV).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridControlAllHoSoSinhVien).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridViewAllHoSoSinhVien).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)txtTKSV.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtDiaChi.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtNgheMe.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtHoTenMe.Properties).EndInit();
@@ -1688,7 +1753,6 @@
             groupBox5.PerformLayout();
             tabNavigationPage4.ResumeLayout(false);
             tabNavigationPage4.PerformLayout();
-            tabNavigationPage5.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1817,13 +1881,17 @@
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage4;
         private GroupBox groupBox9;
         private GroupBox groupBox8;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage5;
-        private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl4;
         private DevExpress.XtraEditors.SimpleButton btnTaoTKGV;
         private TextBox txtTaiKhoanGV;
         private Label label37;
         private DevExpress.XtraEditors.SimpleButton btnDoiMKGV;
         private DevExpress.XtraEditors.SimpleButton btnImportExcelGV;
         private DataGridView dtGridViewGiangVien;
+        private DevExpress.XtraEditors.SimpleButton btnDoiMKSV;
+        private DevExpress.XtraEditors.SimpleButton btnThemTKSV;
+        private DevExpress.XtraEditors.TextEdit txtTKSV;
+        private Label label38;
+        private DataGridView dtGridViewSV;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

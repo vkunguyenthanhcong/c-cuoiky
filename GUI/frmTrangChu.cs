@@ -80,7 +80,7 @@ namespace GUI
             txtNgheMe.Text = thongtin.Ngheme;
             txtDiaChi.Text = thongtin.Diachi;
             txtSoDienThoai.Text = '0' + thongtin.Sodienthoai.ToString();
-
+            txtTKSV.Text = thongtin.Taikhoan;
             Image image = ByteArrayToImage(thongtin.Image);
             imageSinhVien.Image = image;
         }
@@ -791,9 +791,11 @@ namespace GUI
             }
             else
             {
-                if (hoSoGiangVienBLL.addUsername(GetInitials(txtHoTenGV.Text), txtMaGV.Text))
+                string u = GetInitials(txtHoTenGV.Text) + txtMaGV.Text;
+                if (hoSoGiangVienBLL.addUsername(u, txtMaGV.Text))
                 {
                     XtraMessageBox.Show("Thêm tài khoản thành công");
+                    LoadDataTableGiangVien("all");
                 }
                 else
                 {
@@ -801,22 +803,47 @@ namespace GUI
                     {
                         hoSoGiangVienBLL.updateUsername(GetInitials(txtHoTenGV.Text), txtMaGV.Text);
                         XtraMessageBox.Show("Cập nhật thành công");
+                        LoadDataTableGiangVien("all");
                     }
                 }
             }
         }
-        static string GetInitials(string text)
-        {
-            string[] words = text.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-            string result = "";
+        static string GetInitials(string input)
+        {
+            // Remove diacritics
+            string normalizedString = RemoveDiacritics(input);
+
+            // Convert to lowercase
+            normalizedString = normalizedString.ToLower();
+
+            // Extract first letter of each word
+            string[] words = normalizedString.Split(' ');
+            StringBuilder abbreviation = new StringBuilder();
 
             foreach (string word in words)
             {
-                result += word[0];
+                if (!string.IsNullOrEmpty(word))
+                {
+                    abbreviation.Append(word[0]);
+                }
             }
 
-            return result.ToLower();
+            return abbreviation.ToString();
+        }
+
+        static string RemoveDiacritics(string text)
+        {
+            string normalizedString = text.Normalize(NormalizationForm.FormD);
+            StringBuilder stringBuilder = new StringBuilder();
+
+            foreach (char c in normalizedString)
+            {
+                if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
+                    stringBuilder.Append(c);
+            }
+
+            return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
         }
 
         private void btnDoiMKGV_Click(object sender, EventArgs e)
@@ -859,10 +886,10 @@ namespace GUI
             byte[] imageData = File.ReadAllBytes("C:\\Users\\nguye\\source\\repos\\PR_QLSV\\PR_QLSV\\GUI\\image\\hososinhvien.png");
             dtGridViewGiangVien.DataSource = null;
             dtGridViewGiangVien.Rows.Clear();
-            SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-            // Stop reading/writing a spreadsheet when the free limit is reached.
+            SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
             SpreadsheetInfo.FreeLimitReached += (sender, e) => e.FreeLimitReachedAction = FreeLimitReachedAction.Stop;
+
             OpenFileDialog file = new OpenFileDialog();
             file.Title = "SELECT FILE";
             file.FileName = selectedImagePath;
@@ -885,24 +912,133 @@ namespace GUI
                 new ExportToDataGridViewOptions() { ColumnHeaders = false });
             SqlConnection conn = new SqlConnection("Data Source=NGUYENTHANHCONG\\SQLEXPRESS;Initial Catalog=QLSV;Integrated Security=True; MultipleActiveResultSets=true");
             conn.Open();
-            for (int i = 0; i < dtGridViewGiangVien.Rows.Count - 1; i++)
-            {   
-                string sql = $"INSERT INTO qlgiangvien  (magv, hoten, image, gioitinh, ngaysinh, cccd, sodienthoai, email, chuyenmon, makhoa) VALUES ('{dtGridViewGiangVien.Rows[i].Cells[1].Value}', '{dtGridViewGiangVien.Rows[i].Cells[2].Value}', @image, '{dtGridViewGiangVien.Rows[i].Cells[4].Value}', '{dtGridViewGiangVien.Rows[i].Cells[5].Value}', '{dtGridViewGiangVien.Rows[i].Cells[6].Value}','{dtGridViewGiangVien.Rows[i].Cells[7].Value}', '{dtGridViewGiangVien.Rows[i].Cells[8].Value}', '{dtGridViewGiangVien.Rows[i].Cells[9].Value}', '{dtGridViewGiangVien.Rows[i].Cells[10].Value}')";
-                XtraMessageBox.Show(sql);
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
+            try
+            {
+                for (int i = 0; i < dtGridViewGiangVien.Rows.Count - 1; i++)
                 {
-                    cmd.Parameters.AddWithValue("@image", imageData);
-                    cmd.ExecuteNonQuery();
+                    string sql = $"INSERT INTO qlgiangvien  (magv, hoten, image, gioitinh, ngaysinh, cccd, sodienthoai, email, chuyenmon, makhoa) VALUES ('{dtGridViewGiangVien.Rows[i].Cells[1].Value}', '{dtGridViewGiangVien.Rows[i].Cells[2].Value}', @image, '{dtGridViewGiangVien.Rows[i].Cells[4].Value}', '{dtGridViewGiangVien.Rows[i].Cells[5].Value}', '{dtGridViewGiangVien.Rows[i].Cells[6].Value}','{dtGridViewGiangVien.Rows[i].Cells[7].Value}', '{dtGridViewGiangVien.Rows[i].Cells[8].Value}', '{dtGridViewGiangVien.Rows[i].Cells[9].Value}', '{dtGridViewGiangVien.Rows[i].Cells[10].Value}')";
+                    XtraMessageBox.Show(sql);
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@image", imageData);
+                        cmd.ExecuteNonQuery();
+                    }
+
                 }
-                
+                XtraMessageBox.Show("Thêm thành công");
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Mã Giảng Viên đã tồn tại trong hệ thống");
             }
             conn.Close();
+
             LoadDataTableGiangVien("all");
 
         }
-        private void uploadFromTableGiangVienToSQL()
+
+        private void btnThemTKSV_Click(object sender, EventArgs e)
         {
-            
+            if (txtMsv.Text == "")
+            {
+                XtraMessageBox.Show("Vui lòng điền mã sinh viên");
+            }
+            else
+            {
+                string u = GetInitials(txtHoTen.Text) + txtMsv.Text;
+                if (hoSoGiangVienBLL.addUsername(u, txtMsv.Text))
+                {
+                    XtraMessageBox.Show("Thêm tài khoản thành công");
+                    loadTableAllSinhVienOfHoSoSinhVien();
+                }
+                else
+                {
+                    if (XtraMessageBox.Show($"Sinh viên {txtMsv.Text} đã có tài khoản trên hệ thống. Bạn có muốn cập nhật lại không?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        hoSoGiangVienBLL.updateUsername(GetInitials(txtHoTen.Text), txtMsv.Text);
+                        XtraMessageBox.Show("Cập nhật thành công");
+                        loadTableAllSinhVienOfHoSoSinhVien();
+                    }
+                }
+            }
+        }
+
+        private void btnDoiMKSV_Click(object sender, EventArgs e)
+        {
+            if (txtMsv.Text == "")
+            {
+                XtraMessageBox.Show("Vui lòng điền mã sinh viên");
+            }
+            else
+            {
+                id = txtMsv.Text;
+                if (hoSoGiangVienBLL.checkAvailable(txtMsv.Text))
+                {
+                    strPassword = hoSoGiangVienBLL.getPassword(txtMsv.Text);
+                    DoiMatKhau doiMatKhau = new DoiMatKhau(this, strPassword);
+                    doiMatKhau.Show();
+                }
+                else
+                {
+                    XtraMessageBox.Show($"Sinh viên {txtMsv.Text} hiện tại chưa có tài khoản. Vui lòng tạo tài khoản");
+                }
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            byte[] imageData = File.ReadAllBytes("C:\\Users\\nguye\\source\\repos\\PR_QLSV\\PR_QLSV\\GUI\\image\\hososinhvien.png");
+            dtGridViewSV.DataSource = null;
+            dtGridViewSV.Rows.Clear();
+
+            SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+            SpreadsheetInfo.FreeLimitReached += (sender, e) => e.FreeLimitReachedAction = FreeLimitReachedAction.Stop;
+
+            OpenFileDialog file = new OpenFileDialog();
+            file.Title = "SELECT FILE";
+            file.FileName = selectedImagePath;
+            file.Filter = "XLS files (*.xls, *.xlt)|*.xls;*.xlt|" +
+            "XLSX files (*.xlsx, *.xlsm, *.xltx, *.xltm)|*.xlsx;*.xlsm;*.xltx;*.xltm|" +
+            "ODS files (*.ods, *.ots)|*.ods;*.ots|" +
+            "CSV files (*.csv, *.tsv)|*.csv;*.tsv|" +
+            "HTML files (*.html, *.htm)|*.html;*.htm";
+            file.FilterIndex = 2;
+            file.RestoreDirectory = true;
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                selectedImagePath = file.FileName;
+            }
+            var workbook = ExcelFile.Load(selectedImagePath);
+            var worksheet = workbook.Worksheets.ActiveWorksheet;
+            DataGridViewConverter.ExportToDataGridView(
+                worksheet,
+                this.dtGridViewSV,
+                new ExportToDataGridViewOptions() { ColumnHeaders = false });
+            SqlConnection conn = new SqlConnection("Data Source=NGUYENTHANHCONG\\SQLEXPRESS;Initial Catalog=QLSV;Integrated Security=True; MultipleActiveResultSets=true");
+            conn.Open();
+
+            try
+            {
+                for (int i = 0; i < dtGridViewSV.Rows.Count - 1; i++)
+                {
+                    string SQL = $"INSERT INTO hososv(masv, namnhaphoc, image ,hoten, ngaysinh, gioitinh, hedaotao, dantoc, khoa, tenlop, tinhtrang, cccd, sodienthoai, email, hotenbo,nghebo, hotenme,ngheme, diachi) VALUES ('{dtGridViewSV.Rows[i].Cells[2].Value}', '{dtGridViewSV.Rows[i].Cells[3].Value}', @image, '{dtGridViewSV.Rows[i].Cells[5].Value}', '{dtGridViewSV.Rows[i].Cells[6].Value}', '{dtGridViewSV.Rows[i].Cells[7].Value}', '{dtGridViewSV.Rows[i].Cells[8].Value}', '{dtGridViewSV.Rows[i].Cells[9].Value}', '{dtGridViewSV.Rows[i].Cells[10].Value}', '{dtGridViewSV.Rows[i].Cells[11].Value}', '{dtGridViewSV.Rows[i].Cells[12].Value}',  '{dtGridViewSV.Rows[i].Cells[13].Value}', '{dtGridViewSV.Rows[i].Cells[14].Value}', '{dtGridViewSV.Rows[i].Cells[15].Value}', '{dtGridViewSV.Rows[i].Cells[16].Value}', '{dtGridViewSV.Rows[i].Cells[17].Value}', '{dtGridViewSV.Rows[i].Cells[18].Value}', '{dtGridViewSV.Rows[i].Cells[19].Value}', '{dtGridViewSV.Rows[i].Cells[20].Value}')";
+                    XtraMessageBox.Show(SQL);
+                    using (SqlCommand cmd = new SqlCommand(SQL, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@image", imageData);
+                        cmd.ExecuteNonQuery();
+                    }
+
+                }
+                XtraMessageBox.Show("Thêm thành công");
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.ToString());
+            }
+            conn.Close();
+
+            loadTableAllSinhVienOfHoSoSinhVien();
         }
     }
 }
